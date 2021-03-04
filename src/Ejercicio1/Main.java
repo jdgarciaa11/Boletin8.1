@@ -49,15 +49,18 @@ public class Main {
 
 //        int []numAleatorio5 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 //        System.out.println(posicionNumero(5,numAleatorio5));
-
+//        /*TODO buscar array, fallo por bucle demasiado grande, cuando lo encuentre pues salir boolean o diciendo
+//        * en el for que resultado < 0, rsultado = -1 y cuando encuentra el valor, resultado = valor y se rompe
+//        */
     }
 
     public static boolean isPrime(int n) {
+        boolean resultado = true;
         for(int i=2;i<n;i++) {
             if(n%i==0)
-                return false;
+                resultado = false;
         }
-        return true;
+        return resultado;
     }
 
     public static void recorrerArray(int longitud, int []array){
@@ -68,7 +71,7 @@ public class Main {
 
     public static int posicionNumero(int numero, int []array){
         int resultado = -1;
-        for(int i = 0; i < array.length; i++){
+        for(int i = 0; i < array.length && resultado<0; i++){
             if(array[i] == numero){
                 resultado = i;
             }
@@ -80,6 +83,6 @@ public class Main {
         for(int i = 0; i < arrayOrigen.length; i++){
             arrayDestino[i] = arrayOrigen[(arrayOrigen.length-i)-1];
         }
-    }
+    } //TODO hacer return, Inicializarlo y hacer precondiciones
 
 }
